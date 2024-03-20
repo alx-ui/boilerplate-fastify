@@ -8,6 +8,8 @@
   },
   "scripts": {
     "dev": "tsx watch ./src/server.ts",
+    "build": "tsup src",
+    "start": "node ./dist/server.js",
     "setup": "tsx ./src/setup.ts",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
@@ -27,12 +29,13 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/node": "^20.11.25",
-    "tsx": "4.7.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "semantic-release": "^23.0.2",
+    "tsup": "^8.0.2",
+    "tsx": "4.7.1",
     "typescript": "^5.4.2"
   },
   "config": {
