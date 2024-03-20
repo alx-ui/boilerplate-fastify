@@ -1,0 +1,51 @@
+{
+  "name": "boilerplate-fastify",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11.0",
+    "npm": ">=10.4.0"
+  },
+  "scripts": {
+    "dev": "tsx watch ./src/server.ts",
+    "setup": "tsx ./src/setup.ts",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write **/*.{js,ts,tsx}",
+    "format:check": "prettier --check src/",
+    "commit": "cz",
+    "release": "semantic-release --no-ci",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "fastify": "^4.26.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
+    "@ialexanderbrito/eslint-config": "^2.1.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^20.11.25",
+    "tsx": "4.7.1",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "semantic-release": "^23.0.2",
+    "typescript": "^5.4.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint-staged"
+    }
+  }
+}
